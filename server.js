@@ -11,18 +11,19 @@ app.get("/", (req,res)=>{
 
 app.get("/api/cloud", (req,res)=>{
     res.json({
-        platform: "Cloud Infrastructure",
-        services: [
-            "Compute (EC2)",
-            "Storage (S3)",
-            "Containers (Docker/Kubernetes)",
-            "CI/CD (Jenkins)",
-            "Infrastructure as Code (Terraform)",
-            "Monitoring (Prometheus)"
+        services:[
+            "AWS EC2 - Cloud Servers",
+            "S3 - Object Storage",
+            "Docker Containers",
+            "Kubernetes Orchestration",
+            "Jenkins CI/CD Automation",
+            "Terraform Infrastructure as Code",
+            "Prometheus Monitoring",
+            "Nginx Load Balancer"
         ]
     });
 });
 
 app.listen(PORT, ()=>{
-    console.log(`Cloud App running on port ${PORT}`);
+    console.log("Cloud Platform running on port "+PORT);
 });
