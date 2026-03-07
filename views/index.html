@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cloud DevOps Platform</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<nav>
+<h1>CloudOps</h1>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+
+<section id="home">
+<h2>Cloud Infrastructure Platform</h2>
+<p>Deploy, Scale and Monitor applications using DevOps automation</p>
+</section>
+
+
+<section id="services">
+
+<h2>Cloud Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Compute</h3>
+<p>Launch scalable servers using cloud instances.</p>
+</div>
+
+<div class="card">
+<h3>Containers</h3>
+<p>Run applications using Docker & Kubernetes.</p>
+</div>
+
+<div class="card">
+<h3>CI/CD</h3>
+<p>Automate build and deployment pipelines.</p>
+</div>
+
+<div class="card">
+<h3>Monitoring</h3>
+<p>Track application health using Prometheus.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="dashboard">
+
+<h2>Cloud Dashboard</h2>
+
+<button onclick="loadCloud()">Load Cloud Services</button>
+
+<ul id="cloudData"></ul>
+
+</section>
+
+
+<section id="contact">
+
+<h2>Contact Cloud Team</h2>
+
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button>Send</button>
+
+</section>
+
+
+<script>
+
+async function loadCloud(){
+
+const res = await fetch("/api/cloud");
+const data = await res.json();
+
+const list = document.getElementById("cloudData");
+
+list.innerHTML="";
+
+data.services.forEach(service=>{
+    const li = document.createElement("li");
+    li.textContent = service;
+    list.appendChild(li);
+});
+
+}
+
+</script>
+
+</body>
+</html>

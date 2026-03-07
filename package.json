@@ -1,0 +1,22 @@
+{
+  "name": "cloud-devops-app",
+  "version": "1.0.0",
+  "description": "A Cloud themed Node.js application for DevOps project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "cloud",
+    "devops",
+    "express",
+    "aws"
+  ],
+  "author": "Sahil",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
